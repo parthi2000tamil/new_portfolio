@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Developer Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'portfolio_app/css/styles.css' %}">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">Parthiban S</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="HELLO, I'M A DEVELOPER">HELLO, I'M A DEVELOPER</h1>
+            <p class="subtitle">Building the future of the web with Python and Django</p>
+            <a href="#projects" class="btn-glow">Explore My Work</a>
+        </div>
+
+        <div class="hero-image">
+                <div class="image-wrapper antigravity">
+                    <img src="{% static 'images/mypic1.jpeg' %}" alt="Parthiban Profile" class="profile-photo">
+                </div>
+                <div class="glow-ring"></div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <h2 class="section-title">ABOUT <span class="neon-text">ME</span></h2>
+        <div class="about-container glass-card">
+            <p>Hi, I’m Parthiban – a passionate fullstack developer. I build scalable and robust applications using Django for backend and modern frontend technologies like CSS, JavaScript, and responsive design to deliver intuitive and visually appealing interfaces.  
+
+I enjoy blending logic with creativity, writing clean, maintainable code, and crafting solutions that are both functional and elegant. Through personal projects and academic experience, I’ve honed my skills across the full development stack.  
+
+
+            <p style="margin-top: 20px;">Curious and driven, I thrive in challenging environments and constantly explore new tools and technologies to stay ahead in the evolving tech landscape.</p></p>
+            
+            <div style="margin-top: 40px; text-align: left; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 10px; border-left: 3px solid var(--neon-cyan);">
+                <div><strong class="neon-text"><i class="fas fa-user"></i> Name:</strong> Parthiban S</div>
+                <div><strong class="neon-text"><i class="fas fa-map-marker-alt"></i> City:</strong> Cuddalore</div>
+                <div><strong class="neon-text"><i class="fas fa-phone"></i> Phone:</strong> +1 9789211490</div>
+                <div><strong class="neon-text"><i class="fas fa-envelope"></i> Email:</strong> <a href="mailto:neo@antigravity-dev.com" style="color: var(--text-main); text-decoration: none;">parathiban2000ktm@gmail.com</a></div>
+                <div><strong class="neon-text"><i class="fab fa-linkedin"></i> LinkedIn:</strong> <a href="#" style="color: var(--text-main); text-decoration: none;">www.linkedin.com/in/parthi30</a></div>
+                <div><strong class="neon-text"><i class="fab fa-github"></i> GitHub:</strong> <a href="#" style="color: var(--text-main); text-decoration: none;">https://github.com/parthi2000tamil</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="section-title">CORE <span class="neon-text">SKILLS</span></h2>
+        <div class="skills-grid">
+            {% for skill in skills %}
+            <div class="skill-card glass-card hover-float">
+                <i class="{{ skill.icon }} skill-icon"></i>
+                <h3>{{ skill.name }}</h3>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: {{ skill.level }};"></div>
+                </div>
+                <span class="skill-level">{{ skill.level }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <h3 class="section-title" style="margin-top: 60px; font-size: 2rem;">SOFT <span class="neon-text">SKILLS</span></h3>
+        <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            {% for ss in soft_skills %}
+            <div class="skill-card glass-card hover-glow" style="padding: 20px;">
+                <h4 style="font-family: 'Orbitron', sans-serif;">{{ ss }}</h4>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">FEATURED <span class="neon-text">PROJECTS</span></h2>
+        <div class="projects-grid">
+            {% for project in projects %}
+            <div class="project-card glass-card hover-glow">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+                <div class="tech-stack">
+                    {% for tech in project.tech %}
+                    <span class="tech-badge">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                <a href="{{ project.link }}" class="btn-outline">View Details</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="resume" class="section" style="text-align: center;">
+        <h2 class="section-title">MY <span class="neon-text">RESUME</span></h2>
+        <div class="glass-card hover-glow" style="display: inline-block; padding: 40px;">
+            <i class="fas fa-file-pdf" style="font-size: 4rem; color: var(--neon-cyan); margin-bottom: 20px;"></i>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Download my full curriculum vitae to learn more about my professional journey.</p>
+            <a href="{% static 'portfolio_app/resume.pdf' %}" target="_blank" class="btn-glow"><i class="fas fa-download"></i> Download Resume</a>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <h2 class="section-title">ACADEMIC <span class="neon-text">EDUCATION</span></h2>
+        <div class="projects-grid">
+            {% for edu in education %}
+            <div class="project-card glass-card hover-float">
+                <div style="font-size: 0.9rem; color: var(--neon-cyan); margin-bottom: 5px;">{{ edu.year }}</div>
+                <h3 style="margin-bottom: 10px;">{{ edu.degree }}</h3>
+                <div style="color: var(--neon-purple); font-weight: bold; margin-bottom: 15px;">{{ edu.institution }}</div>
+                <p>{{ edu.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="certificates" class="section">
+        <h2 class="section-title">CERTIFICATIONS <span class="neon-text">& AWARDS</span></h2>
+        <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            {% for cert in certificates %}
+            <div class="glass-card hover-glow" style="border-left: 3px solid var(--neon-cyan);">
+                <i class="fas fa-certificate" style="color: var(--neon-purple); font-size: 2rem; float: right;"></i>
+                <h4 style="font-size: 1.2rem; margin-bottom: 5px;">{{ cert.name }}</h4>
+                <div style="color: #aaa; margin-bottom: 5px;">{{ cert.issuer }}</div>
+                <div style="color: var(--neon-cyan); font-family: 'Orbitron';">{{ cert.year }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">INITIATE <span class="neon-text">CONTACT</span></h2>
+        <div class="contact-card glass-card">
+            <p>Ready to build the future? Send a transmission.</p>
+            <form class="contact-form" method="POST">   
+             {% csrf_token %} 
+               
+                <input type="text" name="name" placeholder="Your Designation (Name)" required>
+                <input type="email" name="email" placeholder="Comms Channel (Email)" required>
+                <textarea rows="5" name="message" placeholder="Your Message" required></textarea>  
+                <button type="submit" class="btn-glow">Transmit Message</button> 
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Developer Portfolio | Built with Django & Antigravity Styles</p>
+    </footer>
+
+    <script src="{% static 'portfolio_app/js/script.js' %}"></script>
+</body>
+</html>
