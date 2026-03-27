@@ -20,7 +20,7 @@ def home(request):
             message=f"Hi {name},\n\nYour message has been received successfully.\n\nWe will contact you soon.\n\nThank you!",
             from_email='parathiban2000ktm@gmail.com',
             recipient_list=[email],
-            fail_silently=True,
+            fail_silently=False,
         )
         except Exception as e:
             print("Email error:", e)
