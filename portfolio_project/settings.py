@@ -134,4 +134,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Your development static folder
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # New folder for collectstatic
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
