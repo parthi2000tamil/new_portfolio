@@ -109,7 +109,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'parathiban2000ktm@gmail.com'
-EMAIL_HOST_PASSWORD = 'vqej bgpq aeyz bgxc'   # ⚠️ normal password use பண்ணாதே
+EMAIL_HOST_PASSWORD = 'vqejbgpqaeyzbgxc'   # ⚠️ normal password use பண்ணாதே
 
 
 # Internationalization
