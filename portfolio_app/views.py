@@ -14,13 +14,16 @@ def home(request):
             email=email,
             message=message
         )
-        send_mail(
+        try:
+            send_mail(
             subject="Thanks for contacting us 🚀",
             message=f"Hi {name},\n\nYour message has been received successfully.\n\nWe will contact you soon.\n\nThank you!",
             from_email='parathiban2000ktm@gmail.com',
             recipient_list=[email],
             fail_silently=True,
         )
+        except Exception as e:
+            print("Email error:", e)
 
         return redirect('/')
     
