@@ -104,12 +104,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 #email mail succes setup
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'parathiban2000ktm@gmail.com'
-EMAIL_HOST_PASSWORD = 'vqej bgpq aeyz bgxc'   # ⚠️ normal password use பண்ணாதே
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'parathiban2000ktm@gmail.com'
+# EMAIL_HOST_PASSWORD = 'vqej bgpq aeyz bgxc'   # ⚠️ normal password use பண்ணாதே
 
 
 # Internationalization
