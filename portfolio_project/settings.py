@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vevf_dmts$hi8_8dy92v#$!wdx==05n0ad=%_nzku6sl0+xs=r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['new-portfolio-lvn7.onrender.com']
 
 
 # Application definition
